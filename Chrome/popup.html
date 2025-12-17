@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>YouTube Replacer</title>
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --text: #ffffff;
+      --border: #303030;
+      --accent: #ff0000;
+      --accent-hover: #cc0000;
+      --dim: #606060;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 320px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      padding: 20px;
+      user-select: none;
+      position: relative;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    h2 svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--accent);
+    }
+
+    .input-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 6px;
+      opacity: 0.85;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      background: #181818;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      margin-top: 8px;
+    }
+
+    button:hover {
+      background: var(--accent-hover);
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    .hint {
+      font-size: 11px;
+      opacity: 0.6;
+      margin-top: 4px;
+    }
+
+    /* Маленькая кнопка */
+    .link-button {
+      width: auto;
+      padding: 6px 12px;
+      font-size: 12px;
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      margin-top: 16px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      font-weight: 500;
+    }
+
+    .link-button:hover {
+      background: rgba(255, 0, 0, 0.1);
+    }
+
+    /* Подпись внизу справа */
+    .footer {
+      position: absolute;
+      bottom: 12px;
+      right: 20px;
+      font-size: 10px;
+      color: var(--dim);
+    }
+  </style>
+</head>
+<body>
+    <h2 style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+    <img src="logo48.png" alt="!" style="width: 28px; height: 28px; border-radius: 4px; object-fit: contain;">
+    Настройки логотипа
+    </h2>
+
+  <div class="input-group">
+    <label for="text">Текст</label>
+    <input type="text" id="text" placeholder="Krew762" maxlength="20">
+  </div>
+
+  <div class="input-group">
+    <label for="fontSize">Размер шрифта (px)</label>
+    <input type="number" id="fontSize" min="10" max="30" placeholder="17">
+    <div class="hint">Рекомендуется: 14–20</div>
+  </div>
+
+  <div class="input-group">
+    <label for="x">Позиция по X</label>
+    <input type="text" id="x" placeholder="50%">
+    <div class="hint">Пример: 50% или 60</div>
+  </div>
+
+  <div class="input-group">
+    <label for="y">Позиция по Y</label>
+    <input type="text" id="y" placeholder="50%">
+    <div class="hint">Пример: 50% или 40</div>
+  </div>
+
+  <button id="save">Сохранить и обновить</button>
+
+  <button class="link-button" id="custom-link">
+    Donate
+  </button>
+
+  <div class="footer">by Krew762</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

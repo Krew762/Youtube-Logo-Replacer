@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Logo Replacer",
+  "version": "1.1",
+  "description": "Заменяет логотип YouTube на настраиваемый текст",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Настройки логотипа"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "icons": {
+    "48": "logo48.png",
+    "64": "logo64.png",
+    "72": "logo72.png",
+    "96": "logo96.png",
+    "128": "logo128.png",
+    "256": "logo256.png"
+  }
+}
